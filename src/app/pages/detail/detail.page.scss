@@ -1,0 +1,28 @@
+ion-content {
+    --background: rgba(44, 39, 45, 0.84);
+
+    ion-list-header {
+        ion-label {
+            font-size: 16px;
+            text-align: center !important;
+            margin: 0 auto;
+            color: #4aa1f3;
+        }
+    }
+
+    ion-list {
+        --background: transparent;
+
+        ion-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #4aa1f3;
+        }
+
+        .p1 {
+            margin-top: 5px;
+            font-size: 13px;
+            font-weight: normal;
+        }
+    }
+}

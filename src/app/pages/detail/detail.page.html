@@ -1,0 +1,72 @@
+<ion-content padding>
+  <ion-list lines="none">
+    <ion-list-header lines="inset">
+      <ion-label>Details</ion-label>
+    </ion-list-header>
+    <ion-item lines="none">
+      <ion-label>
+        Name:
+        <p class="p1">
+          {{videoDetail.name}}
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>
+        Modified:
+        <p class="p1">
+          {{videoDetail.modified | date: 'dd MMM yyy, HH:mm a'}}
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>
+        Location:
+        <p class="p1">
+          {{videoDetail.location}}
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>
+        Type:
+        <p class="p1">
+          {{videoDetail.type}}
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>
+        Size
+        <p class="p1">{{videoDetail.size}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>
+        Duration
+        <p class="p1">
+          {{duration(videoDetail.videoInfo.duration)}}
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>
+        Resolution
+        <p class="p1">
+          {{videoDetail.videoInfo.width}}X{{videoDetail.videoInfo.height}}
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>
+        Orientation
+        <p class="p1">
+          {{videoDetail.videoInfo.orientation}}
+        </p>
+      </ion-label>
+    </ion-item>
+  
+    <ion-button expand="full" (click)="closeModal()">OK</ion-button>
+  </ion-list>
+</ion-content>
+

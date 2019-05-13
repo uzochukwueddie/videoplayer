@@ -1,0 +1,31 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            color: #4aa1f3;
+        }
+        
+        ion-back-button {
+            color: #4aa1f3;
+        }
+    }
+}
+
+ion-content {
+    ion-label {
+        font-size: 16px;
+        font-weight: 600;
+        color: #4aa1f3;
+
+        p {
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 15px;
+        }
+    }
+}
+
+ion-footer {
+    ion-tab-button {
+        --ripple-color: white;
+    }
+}

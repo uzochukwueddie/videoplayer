@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{folderName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="videos.length === 0"></app-skeleton>
+
+  <ion-list *ngIf="videos.length > 0">
+    <ion-row *ngFor="let video of videos" (press)="displayDeleteIcons($event, video)">
+      <ion-col size="2" *ngIf="showDeleteIcons && videoname === video.name">
+        <ion-item lines="none">
+          <ion-checkbox 
+          color="primary"
+          (ionChange)="unCheck()"
+          [checked]="showDeleteIcons && videoname === video.name"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+      <ion-col size="10">
+        <ion-item (click)="playVideo(video.location)">
+          <ion-thumbnail slot="start">
+            <img [src]="video.thumbnail">
+          </ion-thumbnail>
+          <ion-label>
+            {{video.name}}
+            <p>{{duration(video.videoInfo.duration)}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer no-border *ngIf="videoname && showDeleteIcons">
+  <ion-toolbar>
+    <ion-tab-bar>
+      <ion-tab-button (click)="deleteVideo(videoObject)">
+        <ion-label>Delete</ion-label>
+        <ion-icon name="trash"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="deselectVideo()">
+        <ion-label>Deselect</ion-label>
+        <ion-icon name="checkbox-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="videoDetailModal(videoObject)">
+        <ion-label>Details</ion-label>
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  </ion-toolbar>
+</ion-footer>
+  

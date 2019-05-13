@@ -1,5 +1,7 @@
 {
   "name": "videoplayer",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

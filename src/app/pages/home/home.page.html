@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Local Videos
+    </ion-title>
+    <ion-buttons slot="end" (click)="reloadPage()">
+      <ion-icon name="refresh"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="isEmpty"></app-skeleton>
+
+  <ion-list *ngIf="videoDirs.length > 0">
+    <ion-item *ngFor="let videoDir of videoDirs" (click)="videosPage(videoDir.fullPath)">
+      <ion-thumbnail slot="start">
+        <img [src]="videoDir.thumbnail">
+      </ion-thumbnail>
+      <ion-label>
+        {{videoDir.dirName}}
+        <p>Local videos: {{videoDir.dirContentLength}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="noFolder" lines="none" *ngIf="toastMessage === 'No folder found'">
+    <p>No folder with videos founnd</p>
+  </ion-list>
+</ion-content>
